@@ -16,8 +16,10 @@
     "semantic-ui-react": "^0.86.0",
     "styled-components": "^4.0.0"
   },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
-  },
-  "license": "ISC"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }

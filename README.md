@@ -5,9 +5,9 @@ clone the repo locally
 
 cd repo-name (cd iprhub)
 
-yarn install
+yarn install/npm install
 
-yarn start
+yarn start/npm start
 
 ```
 

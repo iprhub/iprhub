@@ -19,8 +19,7 @@ import "semantic-ui-css/semantic.min.css";
 
 const HomepageHeading = ({ mobile }) => (
   <Container textAlign="left">
-    <Header 
-      
+    <Header
       as="h1"
       content="IPR Hub"
       style={{
@@ -68,47 +67,40 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-       
-          <Segment
-            inverted
-            textAlign="center"
-            style={{ padding: "1em 0em" }}
-            vertical
+          <Menu
+            fixed={fixed ? "top" : null}
+            pointing={!fixed}
+            secondary={!fixed}
+            size="huge"
           >
-            <Menu
-              fixed={fixed ? "top" : null}
-              inverted
-              pointing={!fixed}
-              secondary={!fixed}
-              size="large"
-            >
-              <Container>
-                <Menu.Item as="a" active>
-                  IPR Hub
-                </Menu.Item>
-                <Menu.Item as="a">About Us</Menu.Item>
-                <Menu.Item as="a">Contact Us</Menu.Item>
-              </Container>
-            </Menu>
+            <Container>
+              <Menu.Item as="a" active>
+                IPR Hub
+              </Menu.Item>
+              <Menu.Item as="a">About Us</Menu.Item>
+              <Menu.Item as="a">Contact Us</Menu.Item>
+            </Container>
+          </Menu>
+          <Segment style={{ minHeight: 700, padding: "1em 0em" }} vertical>
+            <Grid container stackable>
+              <Grid.Row>
+                <Grid.Column width={8}>
+                  <HomepageHeading />
+                </Grid.Column>
+                <Grid.Column
+                  floated="right"
+                  width={6}
+                  style={{ marginTop: "5em" }}
+                >
+                  <Image
+                    size="middle"
+                    src="https://i.pinimg.com/originals/8d/9a/2f/8d9a2fa4913f3ce2f418f19c2ea90bf2.jpg"
+                    size="middle"
+                  />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Segment>
-          <Segment
-            
-            style={{ minHeight: 700, padding: "1em 0em" }}
-            vertical
-          >
-        <Grid container stackable >
-        <Grid.Row>
-          <Grid.Column width={8}>
-            <HomepageHeading />
-          </Grid.Column>
-          <Grid.Column floated='right' width={6} style={{marginTop: "5em"}}>
-            <Image size='middle' src='https://i.pinimg.com/originals/8d/9a/2f/8d9a2fa4913f3ce2f418f19c2ea90bf2.jpg' size="middle" />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-            
-          </Segment>
-        
         </Visibility>
 
         {children}
@@ -203,10 +195,12 @@ const HomepageLayout = () => (
     <Segment style={{ minHeight: 700, padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
-          
           <Grid.Column floated="right" width={6}>
-          <Image size='large' src="https://orig00.deviantart.net/520d/f/2016/066/1/c/dp_by_karliin-d9u8m8o.png" size="middle" />
-
+            <Image
+              size="large"
+              src="https://orig00.deviantart.net/520d/f/2016/066/1/c/dp_by_karliin-d9u8m8o.png"
+              size="middle"
+            />
           </Grid.Column>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
@@ -215,19 +209,20 @@ const HomepageLayout = () => (
             <p style={{ fontSize: "1.33em" }}>
               Blah Blah Blah Matter goes here
             </p>
-            </Grid.Column>
+          </Grid.Column>
         </Grid.Row>
-        <Grid.Row></Grid.Row>
-        <Grid.Row></Grid.Row>
+        <Grid.Row />
+        <Grid.Row />
         <Grid.Row centered>
-        <Grid.Column textAlign="center">
+          <Grid.Column textAlign="center">
             <Header as="h3" style={{ fontSize: "2em" }}>
               What Else We Can Do
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Blah Blah Blah Matter goes here again in new row's column with center text alignment...
+              Blah Blah Blah Matter goes here again in new row's column with
+              center text alignment...
             </p>
-            </Grid.Column>
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
@@ -243,7 +238,7 @@ const HomepageLayout = () => (
           confidentiality with private servers, priority technical support, and
           more.
         </p>
-        <Button as="a" primary size="large" >
+        <Button as="a" primary size="large">
           Try Enterprise
         </Button>
         <Divider

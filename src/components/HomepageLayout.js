@@ -16,6 +16,7 @@ import {
   Visibility
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import { Link } from "react-router-dom";
 
 const HomepageHeading = ({ mobile }) => (
   <Container textAlign="left">
@@ -74,11 +75,12 @@ class DesktopContainer extends Component {
             size="huge"
           >
             <Container>
-              <Menu.Item as="a" active>
+              {/* <Menu.Item as="a" active>
                 IPR Hub
-              </Menu.Item>
-              <Menu.Item as="a">About Us</Menu.Item>
-              <Menu.Item as="a">Contact Us</Menu.Item>
+              </Menu.Item> */}
+              <Link to='/' className='item'>IPR Hub</Link>
+              <Link to='/about' className='item'>About Us</Link>
+              <Link to='/contact' className='item'>Contact Us</Link>
             </Container>
           </Menu>
           <Segment style={{ minHeight: 700, padding: "1em 0em" }} vertical>
@@ -142,9 +144,9 @@ class MobileContainer extends Component {
             <Menu.Item as="a" active>
               Home
             </Menu.Item>
-            <Menu.Item as="a">IPR Hub</Menu.Item>
-            <Menu.Item as="a">About Us</Menu.Item>
-            <Menu.Item as="a">Contact Us</Menu.Item>
+            <Link to='/' className='item'>IPR Hub</Link>
+            <Link to='/about' className='item'>About Us</Link>
+            <Link to='/contact' className='item'>Contact Us</Link>
           </Sidebar>
 
           <Sidebar.Pusher
@@ -226,7 +228,6 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text>
         <Header as="h3" style={{ fontSize: "2em" }}>
@@ -249,7 +250,6 @@ const HomepageLayout = () => (
         >
           <a href="#">See what our happy clients say</a>
         </Divider>
-
         <p style={{ fontSize: "1.33em" }}>
           Blah Blah Blah customers with 5 star feedback goes here...
         </p>
@@ -282,5 +282,4 @@ const HomepageLayout = () => (
     </Segment>
   </ResponsiveContainer>
 );
-
 export default HomepageLayout;

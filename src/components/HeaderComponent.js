@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import {
   Container,
   Icon,
+  Grid,
+  List,
   Menu,
   Responsive,
   Segment,
@@ -11,6 +13,34 @@ import {
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { Link } from "react-router-dom";
+
+const Footer = () => (
+  <Segment inverted color="black" vertical style={{ padding: "5em 0em" }}>
+    <Container>
+      <Grid divided inverted stackable>
+        <Grid.Row>
+          <Grid.Column width={3}>
+            <List link inverted>
+              <List.Item as="a">Sitemap</List.Item>
+              <List.Item as="a">About Us</List.Item>
+              <List.Item as="a">Contact Us</List.Item>
+            </List>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <List link inverted>
+              <List.Item as="a">Privacy Policy</List.Item>
+              <List.Item as="a">Terms and Conditions</List.Item>
+              <List.Item as="a">FAQ</List.Item>
+            </List>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <p> © 2018, IPRHub</p>
+        </Grid.Row>
+      </Grid>
+    </Container>
+  </Segment>
+);
 
 class DesktopContainer extends Component {
   state = {};
@@ -28,19 +58,28 @@ class DesktopContainer extends Component {
           once={false}
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
-          >
-          <Menu
-            fixed={fixed ? "top" : null}
-            pointing={!fixed}
-            secondary={!fixed}
-            size="huge"
+        >
+          <div style={{ background: "black" }}>
+            <Menu
+              fixed={fixed ? "top" : null}
+              pointing={!fixed}
+              secondary={!fixed}
+              size="huge"
+              inverted
             >
-            <Container>
-              <Link to='/' className='item'>IPR Hub</Link>
-              <Link to='/about' className='item'>About Us</Link>
-              <Link to='/contact' className='item'>Contact Us</Link>
-            </Container>
-          </Menu>
+              <Container>
+                <Link to="/" className="item">
+                  IPR Hub
+                </Link>
+                <Link to="/about" className="item">
+                  About Us
+                </Link>
+                <Link to="/contact" className="item">
+                  Contact Us
+                </Link>
+              </Container>
+            </Menu>
+          </div>
         </Visibility>
 
         {children}
@@ -78,31 +117,37 @@ class MobileContainer extends Component {
             vertical
             inverted
             visible={sidebarOpened}
-            >
-            <Link to='/' className='item'>Home</Link>
-            <Link to='/about' className='item'>About Us</Link>
-            <Link to='/contact' className='item'>Contact Us</Link>
+          >
+            <Link to="/" className="item">
+              Home
+            </Link>
+            <Link to="/about" className="item">
+              About Us
+            </Link>
+            <Link to="/contact" className="item">
+              Contact Us
+            </Link>
           </Sidebar>
 
           <Sidebar.Pusher
             dimmed={sidebarOpened}
             onClick={this.handlePusherClick}
             style={{ minHeight: "100vh" }}
-            >
+          >
             <Segment
               textAlign="center"
               style={{ minHeight: 350, padding: "1em 0em" }}
               vertical
-              >
+            >
               <Container>
                 <Menu pointing secondary size="large">
                   <Menu.Item onClick={this.handleToggle}>
                     <Icon name="sidebar" />
                   </Menu.Item>
                 </Menu>
+                {children}
               </Container>
             </Segment>
-            {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </Responsive>
@@ -118,6 +163,7 @@ const ResponsiveContainer = ({ children }) => (
   <div>
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
+    <Footer />
   </div>
 );
 
@@ -125,10 +171,8 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const HeaderComponent = () => (
-  <ResponsiveContainer>
-    
-  </ResponsiveContainer>
+const HeaderComponent = ({ children }) => (
+  <ResponsiveContainer>{children}</ResponsiveContainer>
 );
 
 export default HeaderComponent;

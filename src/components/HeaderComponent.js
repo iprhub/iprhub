@@ -8,8 +8,8 @@ import {
   Menu,
   Responsive,
   Segment,
-  Sidebar,
-  Visibility
+  Visibility,
+  Header
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { Link } from "react-router-dom";
@@ -21,16 +21,32 @@ const Footer = () => (
         <Grid.Row>
           <Grid.Column width={3}>
             <List link inverted>
-              <List.Item as="a">Sitemap</List.Item>
-              <List.Item as="a">About Us</List.Item>
-              <List.Item as="a">Contact Us</List.Item>
+              <List.Item as="a">
+                <Link to="/about" className="item">
+                  About Us
+                </Link>
+              </List.Item>
+              <List.Item as="a">
+                <Link to="/contact" className="item">
+                  Contact Us
+                </Link>
+              </List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
             <List link inverted>
+              <List.Item as="a">
+                <Link to="/tnc" className="item">
+                  Terms and Conditions
+                </Link>
+              </List.Item>
               <List.Item as="a">Privacy Policy</List.Item>
-              <List.Item as="a">Terms and Conditions</List.Item>
-              <List.Item as="a">FAQ</List.Item>
+
+              <List.Item as="a">
+                <Link to="/faq" className="item">
+                  FAQ
+                </Link>
+              </List.Item>
             </List>
           </Grid.Column>
         </Grid.Row>
@@ -43,14 +59,16 @@ const Footer = () => (
 );
 
 class DesktopContainer extends Component {
-  state = {};
+  state = { activeItem: "IPRHub" };
 
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
+    const { activeItem } = this.state;
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -61,23 +79,46 @@ class DesktopContainer extends Component {
         >
           <div style={{ background: "black" }}>
             <Menu
+              fluid
+              inverted
               fixed={fixed ? "top" : null}
               pointing={!fixed}
               secondary={!fixed}
               size="huge"
-              inverted
             >
-              <Container>
+              <Menu.Item
+                style={{ padding: "0em 0em" }}
+                name="IPRHub"
+                fitted="horizontally"
+                active={activeItem === "IPRHub"}
+                onClick={this.handleItemClick}
+              >
                 <Link to="/" className="item">
                   IPR Hub
                 </Link>
+              </Menu.Item>
+              <Menu.Item
+                name="About"
+                fitted="horizontally"
+                style={{ padding: "0em 0em" }}
+                active={activeItem === "About"}
+                onClick={this.handleItemClick}
+              >
                 <Link to="/about" className="item">
                   About Us
                 </Link>
+              </Menu.Item>
+              <Menu.Item
+                name="Contact"
+                fitted="horizontally"
+                style={{ padding: "0em 0em" }}
+                active={activeItem === "Contact"}
+                onClick={this.handleItemClick}
+              >
                 <Link to="/contact" className="item">
                   Contact Us
                 </Link>
-              </Container>
+              </Menu.Item>
             </Menu>
           </div>
         </Visibility>
@@ -93,63 +134,78 @@ DesktopContainer.propTypes = {
 };
 
 class MobileContainer extends Component {
-  state = {};
-
+  state = { activeItem: "IPRHub" };
   handlePusherClick = () => {
-    const { sidebarOpened } = this.state;
+    const { menuOpened } = this.state;
 
-    if (sidebarOpened) this.setState({ sidebarOpened: false });
+    if (menuOpened) this.setState({ menuOpened: false });
   };
-
-  handleToggle = () =>
-    this.setState({ sidebarOpened: !this.state.sidebarOpened });
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleToggle = () => this.setState({ menuOpened: !this.state.menuOpened });
 
   render() {
     const { children } = this.props;
-    const { sidebarOpened } = this.state;
+    const { activeItem } = this.state;
+    const { menuOpened } = this.state;
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
-        <Sidebar.Pushable>
-          <Sidebar
-            as={Menu}
-            animation="uncover"
-            vertical
-            inverted
-            visible={sidebarOpened}
-          >
-            <Link to="/" className="item">
-              Home
-            </Link>
-            <Link to="/about" className="item">
-              About Us
-            </Link>
-            <Link to="/contact" className="item">
-              Contact Us
-            </Link>
-          </Sidebar>
-
-          <Sidebar.Pusher
-            dimmed={sidebarOpened}
-            onClick={this.handlePusherClick}
-            style={{ minHeight: "100vh" }}
-          >
-            <Segment
-              textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
-              vertical
+        <div style={{ background: "black" }}>
+          <Menu fluid pointing secondary size="large">
+            <Menu.Item>
+              <Header
+                inverted
+                style={{
+                  fontSize: "1.5em"
+                }}
+              >
+                IPR Hub
+              </Header>
+            </Menu.Item>
+            <Menu.Item position="right" onClick={this.handleToggle}>
+              <Icon inverted name="sidebar" />
+            </Menu.Item>
+          </Menu>
+        </div>
+        <div /*Need to find a way to hide this div as default and should be visible when menuOpened is true*/
+        >
+          <Menu fluid size="small" inverted vertical>
+            <Menu.Item
+              style={{ padding: "0em 0em" }}
+              name="IPRHub"
+              fitted="horizontally"
+              active={activeItem === "IPRHub"}
+              onClick={this.handleItemClick}
             >
-              <Container>
-                <Menu pointing secondary size="large">
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name="sidebar" />
-                  </Menu.Item>
-                </Menu>
-                {children}
-              </Container>
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
+              <Link to="/" className="item">
+                IPR Hub
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              name="About"
+              fitted="horizontally"
+              style={{ padding: "0em 0em" }}
+              active={activeItem === "About"}
+              onClick={this.handleItemClick}
+            >
+              <Link to="/about" className="item">
+                About Us
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              name="Contact"
+              fitted="horizontally"
+              style={{ padding: "0em 0em" }}
+              active={activeItem === "Contact"}
+              onClick={this.handleItemClick}
+            >
+              <Link to="/contact" className="item">
+                Contact Us
+              </Link>
+            </Menu.Item>
+          </Menu>
+        </div>
+        {children}
       </Responsive>
     );
   }

@@ -5,6 +5,8 @@ import HomepageLayout from "./HomepageLayout";
 import ResponsiveContainer from "./HeaderComponent";
 import About from "./About";
 import Contact from "./Contact";
+import FAQ from "./Faq";
+import TermsAndConditions from "./TermsAndConditions";
 
 class App extends Component {
   render() {
@@ -12,10 +14,11 @@ class App extends Component {
       <Router>
         <ResponsiveContainer>
           <div>
-            {/* <HeaderComponent /> */}
             <Route exact path="/" component={HomepageLayout} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/tnc" component={TermsAndConditions} />
           </div>
         </ResponsiveContainer>
       </Router>

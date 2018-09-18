@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Header, Form, Button } from "semantic-ui-react";
+import { Header, Form, Button, Responsive } from "semantic-ui-react";
+
 export default class Contact extends Component {
   state = {
     fname: "",
@@ -11,15 +12,16 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <div className="centerContent" style={{ padding: "7em 8em" }}>
+      <div className="centerContent" style={{ padding: "7em 2em" }}>
         <Header
           as="h1"
           textAlign="center"
-          style={{ padding: "1.5em 0em", fontSize: "2em" }}
+          style={{ padding: "0em 0em", fontSize: "2.3em" }}
         >
           Contact Us
         </Header>
-        <Form widths="equal">
+
+        <Form unstackable widths="equal">
           <Form.Group>
             <Form.Field>
               <Form.Input
@@ -57,7 +59,7 @@ export default class Contact extends Component {
               />
             </Form.Field>
           </Form.Group>
-          <Form.Field>
+          <Form.Field inline>
             <Form.TextArea
               label="Message:"
               placeholder="Your Message"
@@ -67,6 +69,8 @@ export default class Contact extends Component {
           </Form.Field>
           <Button type="submit">Submit</Button>
         </Form>
+        {/* </Responsive> */}
+        <Responsive maxWidth={Responsive.onlyMobile.maxWidth} />
         <Header as="h5">
           {" "}
           You can also reach us at{" "}

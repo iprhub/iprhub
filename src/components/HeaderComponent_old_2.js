@@ -58,54 +58,6 @@ const Footer = () => (
   </Segment>
 );
 
-class MobileMenu extends Component {
-  state = { activeItem: "IPRHub" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { activeItem } = this.state;
-
-    return (
-      <Menu animation="uncover" fluid size="small" inverted vertical>
-        <Menu.Item
-          style={{ padding: "0em 0em" }}
-          name="IPRHub"
-          fitted="horizontally"
-          active={activeItem === "IPRHub"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/" className="item">
-            IPR Hub
-          </Link>
-        </Menu.Item>
-        <Menu.Item
-          name="About"
-          fitted="horizontally"
-          style={{ padding: "0em 0em" }}
-          active={activeItem === "About"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/about" className="item">
-            About Us
-          </Link>
-        </Menu.Item>
-        <Menu.Item
-          name="Contact"
-          fitted="horizontally"
-          style={{ padding: "0em 0em" }}
-          active={activeItem === "Contact"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/contact" className="item">
-            Contact Us
-          </Link>
-        </Menu.Item>
-      </Menu>
-    );
-  }
-}
-
 class DesktopContainer extends Component {
   state = { activeItem: "IPRHub" };
 
@@ -193,6 +145,8 @@ class MobileContainer extends Component {
 
   render() {
     const { children } = this.props;
+    const { activeItem } = this.state;
+    const { menuOpened } = this.state;
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
@@ -205,9 +159,7 @@ class MobileContainer extends Component {
                   fontSize: "1.5em"
                 }}
               >
-                <Link to="/" style={{ color: "white" }}>
-                  IPR Hub
-                </Link>
+                IPR Hub
               </Header>
             </Menu.Item>
             <Menu.Item position="right" onClick={this.handleToggle}>
@@ -217,7 +169,41 @@ class MobileContainer extends Component {
         </div>
         <div /*Need to find a way to hide this div as default and should be visible when menuOpened is true*/
         >
-          {this.state.menuOpened ? <MobileMenu /> : null}
+          <Menu fluid size="small" inverted vertical>
+            <Menu.Item
+              style={{ padding: "0em 0em" }}
+              name="IPRHub"
+              fitted="horizontally"
+              active={activeItem === "IPRHub"}
+              onClick={this.handleItemClick}
+            >
+              <Link to="/" className="item">
+                IPR Hub
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              name="About"
+              fitted="horizontally"
+              style={{ padding: "0em 0em" }}
+              active={activeItem === "About"}
+              onClick={this.handleItemClick}
+            >
+              <Link to="/about" className="item">
+                About Us
+              </Link>
+            </Menu.Item>
+            <Menu.Item
+              name="Contact"
+              fitted="horizontally"
+              style={{ padding: "0em 0em" }}
+              active={activeItem === "Contact"}
+              onClick={this.handleItemClick}
+            >
+              <Link to="/contact" className="item">
+                Contact Us
+              </Link>
+            </Menu.Item>
+          </Menu>
         </div>
         {children}
       </Responsive>

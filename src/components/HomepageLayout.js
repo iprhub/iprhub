@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import {
   Button,
   Container,
@@ -47,7 +47,7 @@ const HomepageHeading = ({ mobile }) => (
       <Grid.Column floated="right" width={6} style={{ marginTop: "5em" }}>
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
           <Image
-            size="middle"
+            size="large"
             src="https://i.pinimg.com/originals/8d/9a/2f/8d9a2fa4913f3ce2f418f19c2ea90bf2.jpg"
           />
         </Responsive>

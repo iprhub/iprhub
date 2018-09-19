@@ -21,31 +21,23 @@ const Footer = () => (
         <Grid.Row>
           <Grid.Column width={3}>
             <List link inverted>
-              <List.Item as="a">
-                <Link to="/about" className="item">
-                  About Us
-                </Link>
+              <List.Item>
+                <Link to="/about">About Us</Link>
               </List.Item>
-              <List.Item as="a">
-                <Link to="/contact" className="item">
-                  Contact Us
-                </Link>
+              <List.Item>
+                <Link to="/contact">Contact Us</Link>
               </List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
             <List link inverted>
-              <List.Item as="a">
-                <Link to="/tnc" className="item">
-                  Terms and Conditions
-                </Link>
+              <List.Item>
+                <Link to="/tnc">Terms and Conditions</Link>
               </List.Item>
-              <List.Item as="a">Privacy Policy</List.Item>
+              <List.Item>Privacy Policy</List.Item>
 
-              <List.Item as="a">
-                <Link to="/faq" className="item">
-                  FAQ
-                </Link>
+              <List.Item>
+                <Link to="/faq">FAQ</Link>
               </List.Item>
             </List>
           </Grid.Column>
@@ -57,54 +49,6 @@ const Footer = () => (
     </Container>
   </Segment>
 );
-
-class MobileMenu extends Component {
-  state = { activeItem: "IPRHub" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { activeItem } = this.state;
-
-    return (
-      <Menu animation="uncover" fluid size="small" inverted vertical>
-        <Menu.Item
-          style={{ padding: "0em 0em" }}
-          name="IPRHub"
-          fitted="horizontally"
-          active={activeItem === "IPRHub"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/" className="item">
-            IPR Hub
-          </Link>
-        </Menu.Item>
-        <Menu.Item
-          name="About"
-          fitted="horizontally"
-          style={{ padding: "0em 0em" }}
-          active={activeItem === "About"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/about" className="item">
-            About Us
-          </Link>
-        </Menu.Item>
-        <Menu.Item
-          name="Contact"
-          fitted="horizontally"
-          style={{ padding: "0em 0em" }}
-          active={activeItem === "Contact"}
-          onClick={this.handleItemClick}
-        >
-          <Link to="/contact" className="item">
-            Contact Us
-          </Link>
-        </Menu.Item>
-      </Menu>
-    );
-  }
-}
 
 class DesktopContainer extends Component {
   state = { activeItem: "IPRHub" };
@@ -135,6 +79,7 @@ class DesktopContainer extends Component {
               size="huge"
             >
               <Menu.Item
+                as="p"
                 style={{ padding: "0em 0em" }}
                 name="IPRHub"
                 fitted="horizontally"
@@ -146,6 +91,7 @@ class DesktopContainer extends Component {
                 </Link>
               </Menu.Item>
               <Menu.Item
+                as="p"
                 name="About"
                 fitted="horizontally"
                 style={{ padding: "0em 0em" }}
@@ -157,6 +103,7 @@ class DesktopContainer extends Component {
                 </Link>
               </Menu.Item>
               <Menu.Item
+                as="p"
                 name="Contact"
                 fitted="horizontally"
                 style={{ padding: "0em 0em" }}
@@ -182,23 +129,30 @@ DesktopContainer.propTypes = {
 };
 
 class MobileContainer extends Component {
-  state = { activeItem: "IPRHub" };
+  state = { activeItem: "" };
   handlePusherClick = () => {
     const { menuOpened } = this.state;
 
     if (menuOpened) this.setState({ menuOpened: false });
   };
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = nm => {
+    this.setState({ activeItem: nm });
+  };
   handleToggle = () => this.setState({ menuOpened: !this.state.menuOpened });
 
   render() {
     const { children } = this.props;
+    const { activeItem } = this.state;
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
         <div style={{ background: "black" }}>
           <Menu fluid pointing secondary size="large">
-            <Menu.Item>
+            <Menu.Item
+              onClick={() => {
+                this.handleItemClick("IPRHub");
+              }}
+            >
               <Header
                 inverted
                 style={{
@@ -215,9 +169,50 @@ class MobileContainer extends Component {
             </Menu.Item>
           </Menu>
         </div>
-        <div /*Need to find a way to hide this div as default and should be visible when menuOpened is true*/
-        >
-          {this.state.menuOpened ? <MobileMenu /> : null}
+        <div>
+          {this.state.menuOpened ? (
+            <Menu animation="uncover" fluid size="small" inverted vertical>
+              <Menu.Item
+                style={{ padding: "0em 0em" }}
+                fitted="horizontally"
+                active={activeItem === "IPRHub"}
+                onClick={() => {
+                  this.handleItemClick("IPRHub");
+                  this.handleToggle();
+                }}
+              >
+                <Link to="/" className="item">
+                  IPR Hub
+                </Link>
+              </Menu.Item>
+              <Menu.Item
+                fitted="horizontally"
+                style={{ padding: "0em 0em" }}
+                active={activeItem === "About"}
+                onClick={() => {
+                  this.handleItemClick("About");
+                  this.handleToggle();
+                }}
+              >
+                <Link to="/about" className="item">
+                  About Us
+                </Link>
+              </Menu.Item>
+              <Menu.Item
+                fitted="horizontally"
+                style={{ padding: "0em 0em" }}
+                active={activeItem === "Contact"}
+                onClick={() => {
+                  this.handleItemClick("Contact");
+                  this.handleToggle();
+                }}
+              >
+                <Link to="/contact" className="item">
+                  Contact Us
+                </Link>
+              </Menu.Item>
+            </Menu>
+          ) : null}
         </div>
         {children}
       </Responsive>

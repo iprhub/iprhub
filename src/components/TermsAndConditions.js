@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Header, Segment, List, Responsive } from "semantic-ui-react";
+import { Header, Segment, Responsive } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 const TnC = ({ mobile }) => (

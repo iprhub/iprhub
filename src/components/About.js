@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Header, Segment } from "semantic-ui-react";
+import { Grid, Header } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default class About extends Component {

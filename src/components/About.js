@@ -12,7 +12,7 @@ export default class About extends Component {
               <Header as="h1" textAlign="center" style={{ fontSize: "2.3em" }}>
                 About Us
               </Header>
-              <p textAlign="center" style={{ fontSize: "1.33em" }}>
+              <p style={{ fontSize: "1.33em" }}>
                 We are a group of people, who are working 100% to bring lawyers
                 and inventors on one platform to make their work easier for both
                 the parties, while minimizing the costs due to third parties...

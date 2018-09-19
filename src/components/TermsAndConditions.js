@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Segment, Responsive } from "semantic-ui-react";
+import { Header, Segment, Responsive, Container } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 const TnC = ({ mobile }) => (
@@ -10,12 +10,18 @@ const TnC = ({ mobile }) => (
       padding: mobile ? "0em 0em" : "7em 12em"
     }}
   >
-    <Header textAlign="center" style={{ fontSize: mobile ? "1.6em" : "2.3em" }}>
+    <Header
+      textAlign="center"
+      style={{
+        fontSize: mobile ? "1.6em" : "2.3em",
+        padding: mobile ? "1.8em 1.8em" : "2em 2em"
+      }}
+    >
       Terms And Conditions
     </Header>
-    <container text style={{ fontSize: mobile ? "1.1em" : "1.3em" }}>
+    <Container text style={{ fontSize: mobile ? "1.1em" : "1.3em" }}>
       Terms and Conditions goes here in a text container...
-    </container>
+    </Container>
   </Segment>
 );
 

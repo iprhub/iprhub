@@ -7,6 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import FAQ from "./Faq";
 import TermsAndConditions from "./TermsAndConditions";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
             <Route path="/tnc" component={TermsAndConditions} />
+            <Route path="/privacy" component={PrivacyPolicy} />
           </div>
         </ResponsiveContainer>
       </Router>

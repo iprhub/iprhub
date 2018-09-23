@@ -34,7 +34,9 @@ const Footer = () => (
               <List.Item>
                 <Link to="/tnc">Terms and Conditions</Link>
               </List.Item>
-              <List.Item>Privacy Policy</List.Item>
+              <List.Item>
+                <Link to="/privacy">Privacy Policy</Link>
+              </List.Item>
 
               <List.Item>
                 <Link to="/faq">FAQ</Link>
@@ -71,7 +73,6 @@ class DesktopContainer extends Component {
         >
           <div style={{ background: "black" }}>
             <Menu
-              fluid
               inverted
               fixed={fixed ? "top" : null}
               pointing={!fixed}

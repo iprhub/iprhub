@@ -13,7 +13,7 @@
 	$date = date("m/d/y : H:i:s");
 	
 	
-	$myfile = fopen("../cus.txt", "a");
+	$myfile = fopen("../customersData.txt", "a");
 	fwrite($myfile, "\r\n");
 	fwrite($myfile, $txt);
 	fwrite($myfile, "\r\n");

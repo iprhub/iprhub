@@ -9,7 +9,7 @@ export default class About extends Component {
         <Grid stackable container>
           <Grid.Row>
             <Grid.Column>
-              <Header as='h2' textAlign="left">
+              <Header as="h2" textAlign="left">
                 About Us
               </Header>
               <Divider />

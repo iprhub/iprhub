@@ -1,16 +1,10 @@
 import React from "react";
-import {
-  Container,
-  Grid,
-  List,
-  Segment,
-} from "semantic-ui-react";
+import { Container, Grid, List, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { Link } from "react-router-dom";
 
-
 const Footer = () => (
-   <Segment inverted color="black" vertical style={{ padding: "5em 0em" }}>
+  <Segment inverted color="black" vertical style={{ padding: "5em 0em" }}>
     <Container>
       <Grid divided inverted stackable>
         <Grid.Row>
@@ -47,4 +41,4 @@ const Footer = () => (
   </Segment>
 );
 
-export default Footer
+export default Footer;

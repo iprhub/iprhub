@@ -1,18 +1,19 @@
 <?php
-
-
+    header("Access-Control-Allow-Headers: Authorization, Content-Type");
+    header("Access-Control-Allow-Origin: *");
+    header('content-type: application/json; charset=utf-8');
     $json = file_get_contents('php://input');
 	$obj = json_decode($json,true);
-	$fname = $obj['fname'];
-    $lname = $obj['lname'];
+	$fname = $obj['firstName'];
+    $lname = $obj['lastName'];
     $email = $obj['email'];
-    $phoneno = $obj['phoneno'];
+    $phoneno = $obj['phoneNo'];
 	$msg = $obj['msg'];
 	$txt = "----------------------------------------------------------------------------------------------------------------------------------";
 	$date = date("m/d/y : H:i:s");
 	
 	
-	$myfile = fopen("cus.txt", "a");
+	$myfile = fopen("../customersData.txt", "a");
 	fwrite($myfile, "\r\n");
 	fwrite($myfile, $txt);
 	fwrite($myfile, "\r\n");

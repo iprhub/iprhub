@@ -1,15 +1,128 @@
-Follow below instructions to run locally
+### Follow the below instructions to deploy development build
+
+Clone the Repo locally: 
+```
+git clone https://github.com/iprhub/iprhub.git
+```
+Goto the cloned Repo directory:
+```
+cd iprhub
+```
+Install the modules:
+```
+npm install
+```
+Start the development server:
+```
+npm start
+```
+
+
+> Note: For smooth functioning of jest and related modules
+> for testing the components to achieve Test-Driven-Development,
+> please use npm for installing modules and deploying development server.
+
+
+### Folder Structure
+
+After cloning locally, your project should look like this:
 
 ```
-clone the repo locally 
-
-cd repo-name (cd iprhub)
-
-yarn install/npm install
-
-yarn start/npm start
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    __tests__/
+      About.test.js
+      App.test.js
+      __snapshots__/
+        About.test.js.snap
+    components/
+      About.js
+      App.css
+      Contact.js
+      Faq.js
+      Footer.js
+      Header.js
+      HomepageLayout.js
+      PrivacyPolicy.js
+      TermsAndConditions.js
+    images/
+    PHP/
+      customersData.txt
+      sendContactFormAction.php
+    index.css
+    index.js
+    logo.svg
+    registerServiceWorker.js
 
 ```
+
+
+### Forking this project
+1. Click on the Fork button at the top right corner of this page.
+![Fork your own copy of iprhub/iprhub to your account](https://image.ibb.co/furXxU/Screen_Shot_2018_09_26_at_12_18_33_AM.png)
+
+2. Clone the forked project locally:
+```
+git clone https://github.com/your-github-user-name/iprhub.git
+```
+3. Add remote called upstream pointing the main repo:
+```
+git remote add upstream https://github.com/iprhub/iprhub.git
+```
+
+
+### Making and committing changes
+1. Create a new branch:
+```
+git checkout -b your-branch-name
+```
+2. Now you can make changes locally.
+3. After making desired changes, you have to commit them
+* Execute the below line only if you have added new files:
+```
+git add .
+```
+* Commit the changes:
+```
+git commit -am "Describe the changes you have made in your branch"
+```
+4. Pushing changes to our forked repo:
+```
+git push origin your-branch-name
+```
+
+
+### Creating Pull Request
+
+1. You will see the newly added branch on your forked repo page on github.
+2. Click on the "Compare & pull request" button.
+3. Make sure the base branch and head branch are correct.
+4. Add comments, if there are any.
+5. Click on green colored "Send pull request" button, present at the left side of page.
+6. Now, wait for your pull request being merged.
+
+
+### Syncing your forked repo with main repo
+
+1. Make sure you are in master branch:
+```
+git checkout master
+```
+2. Fetch the changes from main repo:
+```
+git fetch upstream
+```
+3. Rebase your forked repo:
+```
+git rebase upstream/master
+```
+
 
 
 Below you will find some information on how to perform common tasks.<br>
@@ -134,28 +247,8 @@ We commit to keeping the breaking changes minimal so you can upgrade `react-scri
 
 ## Sending Feedback
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+We are always open to [your feedback](https://github.com/iprhub/iprhub/issues).
 
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
 
 For the project to build, **these files must exist with exact filenames**:
 

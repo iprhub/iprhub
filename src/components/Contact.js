@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import { Header, Form } from "semantic-ui-react";
+import { Header, Form, Container, Divider } from "semantic-ui-react";
 
 const PostMsg = ({ err }) =>
   err ? (
@@ -21,7 +21,6 @@ export default class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // state = {
       firstName: "",
       lastName: "",
       email: "",
@@ -37,22 +36,9 @@ export default class Contact extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    // this.setState({ lastName: event.target.value });
-    // this.setState({ email: event.target.value });
-    // this.setState({ phoneNo: event.target.value });
-    // this.setState({ message: event.target.value });
   };
-  handleSubmit = () => {
-    // const { fn, ln, em, pn, ms } = this.state;
 
-    // this.setState({
-    //   firstName: fn,
-    //   lastName: ln,
-    //   email: em,
-    //   phoneNo: pn,
-    //   message: ms
-    // });
-    this.setState({ dataSent: true });
+  handleSubmit = () => {
     axios
       .post("http://f5pi.com/sendContactFormAction.php", {
         firstName: this.state.firstName,
@@ -61,46 +47,17 @@ export default class Contact extends Component {
         phoneNo: this.state.phoneNo,
         msg: this.state.message
       })
-
       .then(() => {
-        this.setState({ postReport: true });
+        this.setState({ postReport: true, dataSent: true });
       })
       .catch(error => {
         this.setState({ postReport: false });
         this.setState({ postFail: this.error });
       });
   };
-  // handleChangefirstName = event => {
-  //   this.setState({ firstName: event.target.value });
-  // };
-  // handleChangelastName = event => {
-  //   this.setState({ lastName: event.target.value });
-  // };
-  // handleChangeemail = event => {
-  //   this.setState({ email: event.target.value });
-  // };
-  // handleChangephoneNo = event => {
-  //   this.setState({ phoneNo: event.target.value });
-  // };
-  // handleChangemessage = event => {
-  //   this.setState({ message: event.target.value });
-  // };
-
-  // handleChange = e => {
-  //   this.setState({
-  //     [e.target.name]: e.target.value
-  //   });
-  // };
 
   sendContactForm = event => {
     event.preventDefault();
-
-    // const firstName = { firstName: this.state.firstName };
-    // const { lastName } = this.state;
-    // const { email } = this.state;
-    // const { phoneNo } = this.state;
-    // const { message } = this.state;
-    this.setState({ dataSent: true });
     axios
       .post("http://f5pi.com/sendContactFormAction.php", {
         firstName: this.state.firstName,
@@ -109,52 +66,27 @@ export default class Contact extends Component {
         phoneno: this.state.phoneNo,
         msg: this.state.message
       })
-
       .then(() => {
-        this.setState({ postReport: true });
+        this.setState({ postReport: true, dataSent: true });
       })
       .catch(error => {
         this.setState({ postReport: false });
         this.setState({ postFail: this.error });
       });
-
-    // alert(
-    //   "Data submitted to sendContactFormAction.php and stored on cus.txt on f5pi.com"
-    // );
-
-    // fetch("http://f5pi.com/sendContactFormAction.php", {
-    //   method: "post",
-    //   header: {
-    //     Accept: "application/json",
-    //     "Content-type": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     firstName: firstName,
-    //     lastName: lastName,
-    //     email: email,
-    //     phoneno: phoneNo,
-    //     msg: message
-    //   })
-    // })
-    //   .then(response => response.json())
-    //   .then(responseJson => {
-    //     alert(responseJson);
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
   };
 
   render() {
     return (
+      <Container>
       <div className="centerContent" style={{ padding: "7em 2em" }}>
         <Header
-          as="h1"
-          textAlign="center"
-          style={{ padding: "0em 0em", fontSize: "2.3em" }}
-        >
+          as='h2'
+          textAlign="left"
+          style={{ padding: "0em 0em" }}
+          >
           Contact Us
         </Header>
+        <Divider />
         <Form unstackable widths="equal" onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Field>
@@ -211,7 +143,7 @@ export default class Contact extends Component {
               onChange={this.handleChange}
             />
           </Form.Field>
-          <Form.Button content="Submit">Submit</Form.Button>
+          <Form.Button type="Submit">Submit</Form.Button>
         </Form>
         {this.state.dataSent ? (
           !this.state.postReport ? (
@@ -233,30 +165,7 @@ export default class Contact extends Component {
           <a href="mailto:hello@iprhub.io">hello@iprhub.io</a>
         </Header>
       </div>
-
-      // <form onSubmit={this.sendContactForm}>
-      //   <label>
-      //     firstName: <input type="text" name="firstName" onChange={this.handleChange} />
-      //   </label>
-      //   <br />
-      //   <label>
-      //     lastName: <input type="text" name="lastName" onChange={this.handleChange} />
-      //   </label>
-      //   <br />
-      //   <label>
-      //     email: <input type="text" name="email" onChange={this.handleChange} />
-      //   </label>
-      //   <br />
-      //   <label>
-      //     <input type="text" name="phoneNo" onChange={this.handleChange} />
-      //   </label>
-      //   <br />
-      //   <label>
-      //     <input type="text" name="message" onChange={this.handleChange} />
-      //   </label>
-      //   <br />
-      //   <button type="submit">Send</button>
-      // </form>
+      </Container>
     );
   }
 }

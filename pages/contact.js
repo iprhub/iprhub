@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import Layout from '../components/Layout';
+import Contact from '../components/Contact';
 
-const Title = styled.h1`
-  font-size: 50px;
-`
-
-export default () => <Title>Contact US</Title>
+export default () => (
+  <Layout>
+    <Contact />
+  </Layout>
+);

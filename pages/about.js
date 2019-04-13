@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import Layout from '../components/Layout';
+import About from '../components/About';
 
-const Title = styled.h1`
-  font-size: 50px;
-`
-
-export default () => <Title>About</Title>
+export default () => (
+  <Layout>
+    <About />
+  </Layout>
+);

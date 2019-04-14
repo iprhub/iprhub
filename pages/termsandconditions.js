@@ -1,8 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import Layout from '../components/Layout';
 
-const Title = styled.h1`
-  font-size: 50px;
-`
-
-export default () => <Title>Terms</Title>
+export default () => <Layout>Terms</Layout>;

@@ -54,11 +54,14 @@ const Nav = () => {
   return (
     <NavBarStyle>
       <Link href="/">
-        <LogoStyle>IPRHUB</LogoStyle>
+        <LogoStyle>iprhub</LogoStyle>
       </Link>
       <MenuStyle>
         <Link href="/">
           <MenuItemStyle MenuItemIsActive="true">Home</MenuItemStyle>
+        </Link>
+        <Link href="/about">
+          <MenuItemStyle>About</MenuItemStyle>
         </Link>
         <Link href="/contact">
           <MenuItemStyle>Contact</MenuItemStyle>

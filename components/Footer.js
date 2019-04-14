@@ -82,10 +82,10 @@ const Footer = () => {
       <FooterStyle>
         <FooterLeftStyle>
           <Link href="/">
-            <LogoStyle>IPRHUB</LogoStyle>
+            <LogoStyle>iprhub</LogoStyle>
           </Link>
           <FooterItemsStyle>
-            © Copyright 2019 IPRHUB. All rights reserved.
+            © Copyright 2019 iprhub. All rights reserved.
           </FooterItemsStyle>
         </FooterLeftStyle>
         <FooterRightStyle>

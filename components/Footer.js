@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 //local imports
 import { phone } from '../lib/utils/mediaQueries';
+import { FacebookIcon, TwitterIcon, GithubIcon } from '../static/CommonIcons';
 
 const FooterWrapper = styled.div`
   background-image: linear-gradient(#fafbfc 0, #fff 36px);
@@ -19,7 +20,7 @@ const FooterStyle = styled.div`
   padding: 144px 0 72px;
   ${phone(css`
     flex-direction: column;
-    padding: 70px 0 40px;
+    padding: 40px 0 40px;
   `)};
 `;
 
@@ -52,6 +53,9 @@ const FooterRightItemsGroupStyle = styled.div`
   margin: 0;
   padding: 0;
   text-align: left;
+  &:last-child {
+    text-align: center;
+  }
 `;
 
 const FooterItemsStyle = styled.div`
@@ -120,9 +124,15 @@ const Footer = () => {
           </FooterRightItemsGroupStyle>
           <FooterRightItemsGroupStyle>
             <FooterItemsStyle>Stay in Touch</FooterItemsStyle>
-            <FooterItemsStyle>Facebook</FooterItemsStyle>
-            <FooterItemsStyle>Twitter</FooterItemsStyle>
-            <FooterItemsStyle>Github</FooterItemsStyle>
+            <FooterItemsStyle>
+              <FacebookIcon size="24" />
+            </FooterItemsStyle>
+            <FooterItemsStyle>
+              <TwitterIcon size="24" />
+            </FooterItemsStyle>
+            <FooterItemsStyle>
+              <GithubIcon size="24" />
+            </FooterItemsStyle>
           </FooterRightItemsGroupStyle>
         </FooterRightStyle>
       </FooterStyle>

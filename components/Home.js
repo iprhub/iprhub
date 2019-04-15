@@ -4,20 +4,21 @@ import styled, { css } from 'styled-components';
 //local imports
 import { HomeDesign } from '../static/ProductIllustrations';
 import { phone } from '../lib/utils/mediaQueries';
+import { RightArrow } from '../static/CommonIcons';
 
 const HomeWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 1152px;
-  padding: 70px 24px;
+  padding: 40px 24px;
   text-align: center;
   min-height: 766px;
   display: flex;
   flex-direction: column;
   align-items: center;
   ${phone(css`
-    padding: 85px 24px;
+    padding: 70px 24px;
   `)};
 `;
 
@@ -25,11 +26,11 @@ const StrongText = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   padding-top: 20px;
   margin: 0 auto;
-  max-width: 744px;
-  line-height: 4.3rem;
+  max-width: 750px;
+  line-height: 3.8rem;
   ${phone(css`
     font-size: 1.5rem;
     line-height: 2.3rem;
@@ -38,7 +39,7 @@ const StrongText = styled.div`
 `;
 
 const IllustrationsWrapper = styled.div`
-  width: 60vw;
+  width: 55vw;
   ${phone(css`
     width: 80vw;
   `)};

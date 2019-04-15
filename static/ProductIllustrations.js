@@ -1,17 +1,23 @@
 export const HomeDesign = () => (
   <svg
-    width="670"
-    height="390"
+    // width="400"
+    // height="225"
     viewBox="0 0 670 390"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <rect width="670" height="390" fill="white" />
     <g filter="url(#filter0_d)">
-      <rect x="11" y="11" width="640" height="360" fill="#F9FAFB" />
+      <rect x="11" y="11" width="640" height="360" rx="6" fill="#F9FAFB" />
     </g>
-    <rect x="11" y="11" width="640" height="27" fill="#EFEFEF" />
-    <rect x="11" y="38" width="133" height="333" fill="#EFEFEF" />
+    <path
+      d="M11 17C11 13.6863 13.6863 11 17 11H645C648.314 11 651 13.6863 651 17V38H11V17Z"
+      fill="#EFEFEF"
+    />
+    <path
+      d="M11 38H144V371H17C13.6863 371 11 368.314 11 365V38Z"
+      fill="#EFEFEF"
+    />
     <rect x="20" y="21" width="24" height="7" fill="#D8D8D8" />
     <rect x="54" y="21" width="70" height="7" fill="#D8D8D8" />
     <rect x="598" y="21" width="43" height="7" fill="#D8D8D8" />

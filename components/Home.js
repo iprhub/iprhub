@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 //local imports
 import { HomeDesign } from '../static/ProductIllustrations';
+import { mobileWidth } from '../lib/utils/screenSizes';
 
 const HomeWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
@@ -12,6 +13,12 @@ const HomeWrapper = styled.div`
   padding: 70px 24px;
   text-align: center;
   min-height: 766px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: ${mobileWidth}) {
+    padding: 85px 24px;
+  }
 `;
 
 const StrongText = styled.div`
@@ -23,12 +30,25 @@ const StrongText = styled.div`
   margin: 0 auto;
   max-width: 744px;
   line-height: 4.3rem;
+  @media (max-width: ${mobileWidth}) {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+`;
+
+const IllustrationsWrapper = styled.div`
+  width: 60vw;
+  @media (max-width: ${mobileWidth}) {
+    width: 80vw;
+  }
 `;
 
 const Home = () => {
   return (
     <HomeWrapper>
-      <HomeDesign />
+      <IllustrationsWrapper>
+        <HomeDesign />
+      </IllustrationsWrapper>
       <StrongText>
         The new era of acquiring Intellectual Property Rights is here.
       </StrongText>

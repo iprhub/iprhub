@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
 //local imports
-import { mobileWidth } from '../lib/utils/screenSizes';
+import { phone } from '../lib/utils/mediaQueries';
 
 const NavBarStyle = styled.div`
   -webkit-font-smoothing: antialiased;
@@ -13,11 +13,11 @@ const NavBarStyle = styled.div`
   padding: 15px 0;
   margin-left: 10%;
   margin-right: 10%;
-  @media (max-width: ${mobileWidth}) {
+  ${phone(css`
     flex-direction: column;
     align-items: center;
     padding: 0;
-  }
+  `)};
 `;
 
 const MenuStyle = styled.div`
@@ -29,9 +29,6 @@ const MenuStyle = styled.div`
   justify-content: center;
   margin: 0;
   padding: 0;
-  @media (max-width: ${mobileWidth}) {
-    font-size: 15px;
-  }
 `;
 
 const MenuItemStyle = styled.div`
@@ -54,19 +51,20 @@ const MenuItemStyle = styled.div`
     font-weight: 400;
   }
 
-  @media (max-width: ${mobileWidth}) {
+  ${phone(css`
     margin: 0;
     padding: 0 20px;
-  }
+  `)};
 `;
 
 const LogoStyle = styled.p`
   font-weight: 700;
   font-size: 1.4rem;
   cursor: pointer;
-  @media (max-width: ${mobileWidth}) {
-    font-size: 1.8rem;
-  }
+
+  ${phone(css`
+    font-size: 1.9rem;
+  `)};
 `;
 const Nav = () => {
   return (

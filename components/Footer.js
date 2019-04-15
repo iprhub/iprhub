@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
 //local imports
-import { mobileWidth } from '../lib/utils/screenSizes';
+import { phone } from '../lib/utils/mediaQueries';
 
 const FooterWrapper = styled.div`
   background-image: linear-gradient(#fafbfc 0, #fff 36px);
@@ -17,10 +17,10 @@ const FooterStyle = styled.div`
   margin-left: 10%;
   margin-right: 10%;
   padding: 144px 0 72px;
-  @media (max-width: ${mobileWidth}) {
+  ${phone(css`
     flex-direction: column;
     padding: 70px 0 40px;
-  }
+  `)};
 `;
 
 const FooterLeftStyle = styled.div`
@@ -30,9 +30,10 @@ const FooterLeftStyle = styled.div`
   margin: 0;
   padding: 0;
   text-align: left;
-  @media (max-width: ${mobileWidth}) {
+  ${phone(css`
     padding: 0px 0px 20px 0px;
-  }
+    text-align: center;
+  `)};
 `;
 
 const FooterRightStyle = styled.div`
@@ -84,9 +85,6 @@ const LogoStyle = styled.p`
   font-weight: 700;
   font-size: 1.4rem;
   cursor: pointer;
-  @media (max-width: ${mobileWidth}) {
-    text-align: center;
-  }
 `;
 
 const Footer = () => {

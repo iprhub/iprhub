@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "name": "iprhub-website-redirect",
+    "alias": ["www.iprhub.io"],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "status": 301,
+        "headers": { "Location": "https://iprhub.io/$1" }
+      }
+    ]
+  }

@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "alias": ["iprhub.io"],
+  "name": "iprhub-website",
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+}

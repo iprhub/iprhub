@@ -17,6 +17,9 @@ const NavBarStyle = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -8px;
   `)};
 `;
 
@@ -53,13 +56,13 @@ const MenuItemStyle = styled.div`
 
   ${phone(css`
     margin: 0;
-    padding: 0 15px;
+    padding: 0 4vw;
   `)};
 `;
 
 const LogoStyle = styled.p`
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   cursor: pointer;
 
   ${phone(css`

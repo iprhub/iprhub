@@ -9,13 +9,6 @@ import Footer from './Footer';
 import { Theme } from '../lib/utils/myTheme';
 import { headerFont, bodyFont } from '../lib/utils/fonts';
 
-// const GlobalStyles = createGlobalStyle`
-//   body {
-//     @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
-//     font-family: 'Montserrat', sans-serif;
-//   }
-// `;
-
 const ContentWrapper = styled.div`
   font-family: ${bodyFont};
 `;
@@ -32,7 +25,6 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={Theme}>
       <div>
-        {/* <GlobalStyles /> */}
         <Meta title="IPRHUB" />
         <HeaderWrapper>
           <Nav />

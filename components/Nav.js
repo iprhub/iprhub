@@ -9,7 +9,7 @@ const NavBarStyle = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 15px 0;
   margin-left: 10%;
   margin-right: 10%;
@@ -25,13 +25,14 @@ const NavBarStyle = styled.div`
 
 const MenuStyle = styled.div`
   -webkit-font-smoothing: antialiased;
-  align-items: center;
   box-sizing: border-box;
   display: flex;
   font-size: 15px;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
+  width: 100%;
+  align-items: center;
 `;
 
 const MenuItemStyle = styled.div`
@@ -48,7 +49,6 @@ const MenuItemStyle = styled.div`
   transition-duration: 0.2s;
   transition-property: all;
   transition-timing-function: ease;
-
   &:hover {
     opacity: 1;
     font-weight: 400;
@@ -58,6 +58,12 @@ const MenuItemStyle = styled.div`
     margin: 0;
     padding: 0 4vw;
   `)};
+`;
+
+const RightMenuStyle = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 `;
 
 const LogoStyle = styled.p`
@@ -76,16 +82,19 @@ const Nav = () => {
         <LogoStyle>iprhub</LogoStyle>
       </Link>
       <MenuStyle>
-        <Link href="/">
+        {/* <Link href="/">
           <MenuItemStyle MenuItemIsActive="true">Home</MenuItemStyle>
-        </Link>
+        </Link> */}
         <Link href="/about">
           <MenuItemStyle>About</MenuItemStyle>
         </Link>
         <Link href="/contact">
           <MenuItemStyle>Contact</MenuItemStyle>
         </Link>
-        <MenuItemStyle>Sign in</MenuItemStyle>
+        <RightMenuStyle>
+          <MenuItemStyle>Log In</MenuItemStyle>
+          <MenuItemStyle>Sign Up</MenuItemStyle>
+        </RightMenuStyle>
       </MenuStyle>
     </NavBarStyle>
   );

@@ -24,6 +24,7 @@ const MainLanding = styled.div`
   /* align-items: center; */
   ${phone(css`
     padding: 70px 24px;
+    flex-direction: column;
   `)};
 `;
 
@@ -36,7 +37,7 @@ const StrongText = styled.div`
   max-width: 750px;
   align-self: center;
   ${phone(css`
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     font-weight: 500;
   `)};
 `;
@@ -59,6 +60,7 @@ const IllustrationsWrapper = styled.div`
   width: 45vw;
   ${phone(css`
     width: 80vw;
+    align-self: center;
   `)};
 `;
 
@@ -69,6 +71,14 @@ const CardsWrapper = styled.div`
   margin-left: 20vw;
   margin-right: 20vw;
   margin-top: 60px;
+  ${phone(css`
+    justify-items: center;
+    flex-direction: column;
+    align-items: space-between;
+    margin-bottom: 5vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+  `)};
 `;
 const CardContainer = styled.div`
   box-sizing: border-box;
@@ -79,6 +89,12 @@ const CardContainer = styled.div`
   padding-right: 15px;
   position: relative;
   width: 33.3333%;
+  ${phone(css`
+    box-sizing: content-box;
+    flex-basis: auto;
+    width: auto;
+    margin-top: 3vh;
+  `)};
 `;
 
 const Card = styled.div`
@@ -109,6 +125,10 @@ const Card = styled.div`
 const CardHeader = styled.div`
   box-sizing: border-box;
   font-size: 1.2rem;
+  ${phone(css`
+    box-sizing: content-box;
+    font-size: 0.7rem;
+  `)};
 `;
 
 const PrimaryButton = styled.div`
@@ -143,9 +163,13 @@ const PrimaryButton = styled.div`
     background-color: #25c17e;
     outline: 0;
   }
+  ${phone(css`
+    margin-top: auto;
+    margin-bottom: 2vh;
+  `)};
 `;
 
-const RightWrapper = styled.div`
+const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -154,18 +178,21 @@ const RightWrapper = styled.div`
 
 const SmallText = styled.p`
   margin-top: -7vh;
+  ${phone(css`
+    margin-top: 2vh;
+  `)};
 `;
 const Home = () => {
   return (
     <HomeWrapper>
       <MainLanding>
-        <RightWrapper>
+        <LeftWrapper>
           <StrongText>Intellectual Property, Simplified.</StrongText>
           <SmallText>
             iprhub is a place where inventors meet attorneys.
           </SmallText>
           <PrimaryButton>Get Started</PrimaryButton>
-        </RightWrapper>
+        </LeftWrapper>
 
         <IllustrationsWrapper>
           <HomeDesign />

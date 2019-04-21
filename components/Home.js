@@ -189,7 +189,7 @@ const Home = () => {
         <LeftWrapper>
           <StrongText>Intellectual Property, Simplified.</StrongText>
           <SmallText>
-            iprhub is a place where inventors meet attorneys.
+            iprhub is a place where inventors collaborate with attorneys.
           </SmallText>
           <PrimaryButton>Get Started</PrimaryButton>
         </LeftWrapper>

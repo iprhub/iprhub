@@ -19,12 +19,14 @@ const MainLanding = styled.div`
   padding: 40px 24px;
   text-align: center;
   /* min-height: 766px; */
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 2.5fr 3fr;
+  /* flex-direction: row; */
   /* align-items: center; */
   ${phone(css`
     padding: 70px 24px;
-    flex-direction: column;
+    /* flex-direction: column; */
   `)};
 `;
 
@@ -125,10 +127,17 @@ const Card = styled.div`
 const CardHeader = styled.div`
   box-sizing: border-box;
   font-size: 1.2rem;
+  font-weight: 500;
   ${phone(css`
     box-sizing: content-box;
     font-size: 0.7rem;
   `)};
+`;
+
+const CardContent = styled.p`
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.2rem;
 `;
 
 const PrimaryButton = styled.div`
@@ -158,7 +167,7 @@ const PrimaryButton = styled.div`
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  margin-top: -30px;
+  /* margin-top: -30px; */
   &:hover {
     background-color: #25c17e;
     outline: 0;
@@ -177,7 +186,8 @@ const LeftWrapper = styled.div`
 `;
 
 const SmallText = styled.p`
-  margin-top: -7vh;
+  /* margin-top: -7vh; */
+  line-height: 1.4rem;
   ${phone(css`
     margin-top: 2vh;
   `)};
@@ -189,7 +199,10 @@ const Home = () => {
         <LeftWrapper>
           <StrongText>Intellectual Property, Simplified.</StrongText>
           <SmallText>
-            iprhub is a place where inventors collaborate with attorneys.
+            iprhub is an Intellectual Property Rights management platform aimed
+            at simplifying Intellectual Property applications, prosecution,
+            tracking and management for innovators, creators, right holders and
+            IPR Attorneys.
           </SmallText>
           <PrimaryButton>Get Started</PrimaryButton>
         </LeftWrapper>
@@ -204,18 +217,35 @@ const Home = () => {
           <Card>
             <BulbIcon size="42" />
             <CardHeader>Patents</CardHeader>
+            <CardContent>
+              All your inventions safe and secure, on the cloud. Collaborate
+              with Patent Agents/Attorneys. With iprhub Sit back, relax and
+              manage your Patents at the click of a button.
+            </CardContent>
           </Card>
         </CardContainer>
         <CardContainer>
           <Card>
             <TMIcon size="42" />
             <CardHeader>Trademarks</CardHeader>
+            <CardContent>
+              Form an Individual to a Corporation, building and nurturing Brands
+              is the key to market success. iprhub allows you to manage your
+              Trademarks on the go. Safe and secure. Compliance? Sorted!
+            </CardContent>
           </Card>
         </CardContainer>
         <CardContainer>
           <Card>
             <DesignIcon size="42" />
             <CardHeader>Design</CardHeader>
+            <CardContent>
+              While you were working on evolving that new design language for
+              your products. We are hard at work to design a plat form that
+              allows you to identify competent IPR Attorneys who help you secure
+              your IPR over your Designs. No matter the size of your portfolio,
+              iprhub has you covered.
+            </CardContent>
           </Card>
         </CardContainer>
       </CardsWrapper>

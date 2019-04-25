@@ -8,8 +8,8 @@ import { BulbIcon, TMIcon, DesignIcon } from '../static/CommonIcons';
 
 const HomeWrapper = styled.div`
   min-height: 766px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 10vh;
 `;
 const MainLanding = styled.div`
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,7 @@ const MainLanding = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 2.5fr 3fr;
+  grid-gap: 3.5vw;
   /* flex-direction: row; */
   /* align-items: center; */
   ${phone(css`
@@ -33,7 +34,7 @@ const MainLanding = styled.div`
 const StrongText = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 500;
   margin: 0 auto;
   max-width: 750px;
@@ -51,7 +52,7 @@ const StrongText2 = styled.div`
   font-weight: 500;
   margin: 0 auto;
   max-width: 750px;
-  align-self: center;
+  text-align: center;
   ${phone(css`
     font-size: 1.1rem;
     font-weight: 500;
@@ -59,7 +60,7 @@ const StrongText2 = styled.div`
 `;
 
 const IllustrationsWrapper = styled.div`
-  width: 45vw;
+  width: 40vw;
   ${phone(css`
     width: 80vw;
     align-self: center;
@@ -70,8 +71,8 @@ const CardsWrapper = styled.div`
   align-items: stretch;
   box-sizing: border-box;
   display: flex;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
   margin-top: 60px;
   ${phone(css`
     justify-items: center;
@@ -105,7 +106,7 @@ const Card = styled.div`
   border-radius: 3px;
   box-shadow: #d8d8d8 0 3px 0 inset, rgba(0, 0, 0, 0.08) 0 5px 9px;
   box-sizing: border-box;
-  color: #707b7b;
+  /* color: #707b7b; */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -120,7 +121,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: #6d48e5 0 4px 0 inset, rgba(0, 0, 0, 0.08) 0 8px 14px;
     transform: translateY(-5px);
-    color: #6d48e5;
+    /* color: #6d48e5; */
   }
 `;
 
@@ -128,6 +129,7 @@ const CardHeader = styled.div`
   box-sizing: border-box;
   font-size: 1.2rem;
   font-weight: 500;
+  margin-top: 8px;
   ${phone(css`
     box-sizing: content-box;
     font-size: 0.7rem;
@@ -136,8 +138,9 @@ const CardHeader = styled.div`
 
 const CardContent = styled.p`
   font-size: 1rem;
-  text-align: justify;
-  line-height: 1.2rem;
+  text-align: center;
+  line-height: 1.5rem;
+  font-weight: 300;
 `;
 
 const PrimaryButton = styled.div`
@@ -186,8 +189,9 @@ const LeftWrapper = styled.div`
 `;
 
 const SmallText = styled.p`
-  /* margin-top: -7vh; */
-  line-height: 1.4rem;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  font-weight: 300;
   ${phone(css`
     margin-top: 2vh;
   `)};
@@ -211,44 +215,46 @@ const Home = () => {
           <HomeDesign />
         </IllustrationsWrapper>
       </MainLanding>
-      <StrongText2>Our Platform</StrongText2>
-      <CardsWrapper>
-        <CardContainer>
-          <Card>
-            <BulbIcon size="42" />
-            <CardHeader>Patents</CardHeader>
-            <CardContent>
-              All your inventions safe and secure, on the cloud. Collaborate
-              with Patent Agents/Attorneys. With iprhub Sit back, relax and
-              manage your Patents at the click of a button.
-            </CardContent>
-          </Card>
-        </CardContainer>
-        <CardContainer>
-          <Card>
-            <TMIcon size="42" />
-            <CardHeader>Trademarks</CardHeader>
-            <CardContent>
-              Form an Individual to a Corporation, building and nurturing Brands
-              is the key to market success. iprhub allows you to manage your
-              Trademarks on the go. Safe and secure. Compliance? Sorted!
-            </CardContent>
-          </Card>
-        </CardContainer>
-        <CardContainer>
-          <Card>
-            <DesignIcon size="42" />
-            <CardHeader>Design</CardHeader>
-            <CardContent>
-              While you were working on evolving that new design language for
-              your products. We are hard at work to design a plat form that
-              allows you to identify competent IPR Attorneys who help you secure
-              your IPR over your Designs. No matter the size of your portfolio,
-              iprhub has you covered.
-            </CardContent>
-          </Card>
-        </CardContainer>
-      </CardsWrapper>
+      <div>
+        <StrongText2>Our Platform</StrongText2>
+        <CardsWrapper>
+          <CardContainer>
+            <Card>
+              <BulbIcon size="42" />
+              <CardHeader>Patents</CardHeader>
+              <CardContent>
+                All your inventions safe and secure, on the cloud. Collaborate
+                with Patent Agents/Attorneys. With iprhub Sit back, relax and
+                manage your Patents at the click of a button.
+              </CardContent>
+            </Card>
+          </CardContainer>
+          <CardContainer>
+            <Card>
+              <TMIcon size="42" />
+              <CardHeader>Trademarks</CardHeader>
+              <CardContent>
+                Form an Individual to a Corporation, building and nurturing
+                Brands is the key to market success. iprhub allows you to manage
+                your Trademarks on the go. Safe and secure. Compliance? Sorted!
+              </CardContent>
+            </Card>
+          </CardContainer>
+          <CardContainer>
+            <Card>
+              <DesignIcon size="42" />
+              <CardHeader>Design</CardHeader>
+              <CardContent>
+                While you were working on evolving that new design language for
+                your products. We are hard at work to design a plat form that
+                allows you to identify competent IPR Attorneys who help you
+                secure your IPR over your Designs. No matter the size of your
+                portfolio, iprhub has you covered.
+              </CardContent>
+            </Card>
+          </CardContainer>
+        </CardsWrapper>
+      </div>
     </HomeWrapper>
   );
 };

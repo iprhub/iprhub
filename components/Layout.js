@@ -21,11 +21,13 @@ const FooterWrapper = styled.div`
   font-family: ${headerFont};
 `;
 
+const LayoutWrapper = styled.div``;
+
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={Theme}>
-      <div>
-        <Meta title="IPRHUB" />
+      <LayoutWrapper>
+        <Meta />
         <HeaderWrapper>
           <Nav />
         </HeaderWrapper>
@@ -33,7 +35,7 @@ const Layout = ({ children }) => {
         <FooterWrapper>
           <Footer />
         </FooterWrapper>
-      </div>
+      </LayoutWrapper>
     </ThemeProvider>
   );
 };

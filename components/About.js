@@ -5,9 +5,10 @@ import styled from 'styled-components';
 import { GenericPageWrapper, Heading1, Heading2 } from './Common/Styles';
 
 const BodyText = styled.p`
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   text-align: center;
-  line-height: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 400;
 `;
 
 const TeamBox = styled.div`

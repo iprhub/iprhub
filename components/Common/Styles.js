@@ -9,8 +9,15 @@ export const GenericPageWrapper = styled.div`
 `;
 
 export const Heading1 = styled.p`
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   font-weight: 700;
+  &:after {
+    background-color: #6d48e5;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 0.5em 0;
+
 `;
 
 export const Heading2 = styled.p`

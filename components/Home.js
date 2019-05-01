@@ -28,6 +28,8 @@ const MainLanding = styled.div`
   ${phone(css`
     padding: 70px 24px;
     /* flex-direction: column; */
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
   `)};
 `;
 
@@ -79,8 +81,8 @@ const CardsWrapper = styled.div`
     flex-direction: column;
     align-items: space-between;
     margin-bottom: 5vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
   `)};
 `;
 const CardContainer = styled.div`
@@ -193,7 +195,10 @@ const SmallText = styled.p`
   line-height: 1.9rem;
   font-weight: 300;
   ${phone(css`
+    font-size: 1.1rem;
+
     margin-top: 2vh;
+    line-height: 1.4rem;
   `)};
 `;
 const Home = () => {

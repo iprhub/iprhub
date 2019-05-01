@@ -187,7 +187,7 @@ const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;s
+  align-items: center;
 `;
 
 const SmallText = styled.p`

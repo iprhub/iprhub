@@ -2,14 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //local imports
-import { GenericPageWrapper, Heading1, Heading2 } from './Common/Styles';
-
-const BodyText = styled.p`
-  font-size: 1.8rem;
-  text-align: center;
-  line-height: 2.2rem;
-  font-weight: 400;
-`;
+import { GenericPageWrapper, Heading1, BodyText } from './Common/Styles';
 
 const TeamBox = styled.div`
   display: grid;

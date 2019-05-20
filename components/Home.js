@@ -2,9 +2,10 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 //local imports
-import { HomeDesign } from "../static/ProductIllustrations";
-import { phone } from "../lib/utils/mediaQueries";
-import { BulbIcon, TMIcon, DesignIcon } from "../static/CommonIcons";
+import { HomeDesign } from '../static/ProductIllustrations';
+import { phone } from '../lib/utils/mediaQueries';
+import { BulbIcon, TMIcon, DesignIcon } from '../static/CommonIcons';
+import rem from '../lib/utils/rem';
 import { Button } from "semantic-ui-react";
 
 const HomeWrapper = styled.div`
@@ -29,19 +30,21 @@ const MainLanding = styled.div`
   ${phone(css`
     padding: 70px 24px;
     /* flex-direction: column; */
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
   `)};
 `;
 
 const StrongText = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  font-size: 2.8rem;
+  font-size: ${rem(45)};
   font-weight: 500;
   margin: 0 auto;
   max-width: 750px;
   align-self: center;
   ${phone(css`
-    font-size: 1.8rem;
+    font-size: ${rem(35)};
     font-weight: 500;
   `)};
 `;
@@ -49,13 +52,13 @@ const StrongText = styled.div`
 const StrongText2 = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  font-size: 1.4rem;
+  font-size: ${rem(35)};
   font-weight: 500;
   margin: 0 auto;
   max-width: 750px;
   text-align: center;
   ${phone(css`
-    font-size: 1.1rem;
+    font-size: ${rem(24)};
     font-weight: 500;
   `)};
 `;
@@ -80,8 +83,8 @@ const CardsWrapper = styled.div`
     flex-direction: column;
     align-items: space-between;
     margin-bottom: 5vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
   `)};
 `;
 const CardContainer = styled.div`
@@ -128,17 +131,16 @@ const Card = styled.div`
 
 const CardHeader = styled.div`
   box-sizing: border-box;
-  font-size: 1.2rem;
+  font-size: ${rem(30)};
   font-weight: 500;
   margin-top: 8px;
   ${phone(css`
     box-sizing: content-box;
-    font-size: 0.7rem;
+    font-size: ${rem(24)};
   `)};
 `;
 
 const CardContent = styled.p`
-  font-size: 1rem;
   text-align: center;
   line-height: 1.5rem;
   font-weight: 300;
@@ -154,7 +156,7 @@ const PrimaryButton = styled.button`
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
+  font-size: ${rem(20)};
   font-weight: 600;
   line-height: 1.42857;
   margin-bottom: 0;
@@ -190,11 +192,14 @@ const LeftWrapper = styled.div`
 `;
 
 const SmallText = styled.p`
-  font-size: 1.3rem;
+  font-size: ${rem(21)};
   line-height: 1.9rem;
   font-weight: 300;
   ${phone(css`
+    font-size: ${rem(18)};
+
     margin-top: 2vh;
+    line-height: 1.4rem;
   `)};
 `;
 const Home = () => {

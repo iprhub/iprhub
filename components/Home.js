@@ -1,10 +1,11 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from "react";
+import styled, { css } from "styled-components";
 
 //local imports
-import { HomeDesign } from '../static/ProductIllustrations';
-import { phone } from '../lib/utils/mediaQueries';
-import { BulbIcon, TMIcon, DesignIcon } from '../static/CommonIcons';
+import { HomeDesign } from "../static/ProductIllustrations";
+import { phone } from "../lib/utils/mediaQueries";
+import { BulbIcon, TMIcon, DesignIcon } from "../static/CommonIcons";
+import { Button } from "semantic-ui-react";
 
 const HomeWrapper = styled.div`
   min-height: 766px;
@@ -143,7 +144,7 @@ const CardContent = styled.p`
   font-weight: 300;
 `;
 
-const PrimaryButton = styled.div`
+const PrimaryButton = styled.button`
   background-color: #3fda97;
   background-image: none;
   border: 1px solid transparent;
@@ -208,7 +209,7 @@ const Home = () => {
             tracking and management for innovators, creators, right holders and
             IPR Attorneys.
           </SmallText>
-          <PrimaryButton>Get Started</PrimaryButton>
+          <PrimaryButton href="https://demo.iprhub.io">View Demo</PrimaryButton>
         </LeftWrapper>
 
         <IllustrationsWrapper>

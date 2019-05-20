@@ -1,9 +1,10 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import Link from 'next/link';
+import React from "react";
+import styled, { css } from "styled-components";
+import Link from "next/link";
 
 //local imports
-import { phone } from '../lib/utils/mediaQueries';
+import { phone } from "../lib/utils/mediaQueries";
+import { Button } from "semantic-ui-react";
 
 const NavBarStyle = styled.div`
   -webkit-font-smoothing: antialiased;
@@ -38,11 +39,11 @@ const MenuStyle = styled.div`
 const MenuItemStyle = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: ${props => (props.MenuItemIsActive ? '#6d48e5' : '#1c1d1e')};
+  color: ${props => (props.MenuItemIsActive ? "#6d48e5" : "#1c1d1e")};
   cursor: pointer;
   margin: 0 0 0 48px;
-  opacity: ${props => (props.MenuItemIsActive ? '1' : '0.9')};
-  font-weight: ${props => (props.MenuItemIsActive ? '450' : '360')};
+  opacity: ${props => (props.MenuItemIsActive ? "1" : "0.9")};
+  font-weight: ${props => (props.MenuItemIsActive ? "450" : "360")};
   padding: 0;
   text-decoration: none;
   transition-delay: 0s;
@@ -92,8 +93,9 @@ const Nav = () => {
           <MenuItemStyle>Contact</MenuItemStyle>
         </Link>
         <RightMenuStyle>
-          <MenuItemStyle>Log In</MenuItemStyle>
-          <MenuItemStyle>Sign Up</MenuItemStyle>
+          {/* <MenuItemStyle>Log In</MenuItemStyle> */}
+          {/* <MenuItemStyle>Sign Up</MenuItemStyle> */}
+          <Button href="https://demo.iprhub.io">Demo</Button>
         </RightMenuStyle>
       </MenuStyle>
     </NavBarStyle>

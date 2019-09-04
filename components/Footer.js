@@ -58,7 +58,9 @@ const FooterRightItemsGroupStyle = styled.div`
   }
 `;
 
-const FooterItemsStyle = styled.div`
+const FooterItemsStyle = styled.a`
+text-decoration: none;
+display: block;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   color: #1c1d1e;
@@ -115,7 +117,7 @@ const Footer = () => {
             <Link href="/about">
               <FooterItemsStyle>About</FooterItemsStyle>
             </Link>
-            <FooterItemsStyle>Sign in</FooterItemsStyle>
+            <FooterItemsStyle href="https://app.iprhub.io/auth/login">Sign in</FooterItemsStyle>
           </FooterRightItemsGroupStyle>
           <FooterRightItemsGroupStyle>
             <FooterItemsStyle>Legal</FooterItemsStyle>

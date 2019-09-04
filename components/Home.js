@@ -146,37 +146,22 @@ const CardContent = styled.p`
   font-weight: 300;
 `;
 
-const PrimaryButton = styled.button`
-  background-color: #3fda97;
-  background-image: none;
-  border: 1px solid transparent;
+const PrimaryButton = styled.a`
+text-decoration: none;
+  background-color: #6d48e5;
   border-radius: 3px;
-  box-shadow: none;
-  box-sizing: border-box;
+  border: 1px solid transparent;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
   font-size: ${rem(20)};
   font-weight: 600;
   line-height: 1.42857;
-  margin-bottom: 0;
   min-width: 8px;
   padding: 8px 16px;
-  position: relative;
   text-align: center;
   text-decoration: none;
-  touch-action: manipulation;
-  transition-delay: 0s, 0s, 0s;
-  transition-duration: 0.1s, 0.1s, 50ms;
-  transition-property: background-color, border-color, box-shadow;
-  transition-timing-function: ease-out, ease-out, ease-out;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  /* margin-top: -30px; */
   &:hover {
-    background-color: #25c17e;
-    outline: 0;
+    background-color: #4e2fb5;
   }
   ${phone(css`
     margin-top: auto;
@@ -214,7 +199,7 @@ const Home = () => {
             tracking and management for innovators, creators, right holders and
             IPR Attorneys.
           </SmallText>
-          <PrimaryButton href="https://demo.iprhub.io">View Demo</PrimaryButton>
+          <PrimaryButton href="https://app.iprhub.io">Get Started</PrimaryButton>
         </LeftWrapper>
 
         <IllustrationsWrapper>
@@ -229,7 +214,7 @@ const Home = () => {
               <BulbIcon size="42" />
               <CardHeader>Patents</CardHeader>
               <CardContent>
-                All your inventions safe and secure, on the cloud. Collaborate
+                 Collaborate
                 with Patent Agents/Attorneys. With iprhub Sit back, relax and
                 manage your Patents at the click of a button.
               </CardContent>
@@ -240,9 +225,7 @@ const Home = () => {
               <TMIcon size="42" />
               <CardHeader>Trademarks</CardHeader>
               <CardContent>
-                Form an Individual to a Corporation, building and nurturing
-                Brands is the key to market success. iprhub allows you to manage
-                your Trademarks on the go. Safe and secure. Compliance? Sorted!
+                Coming Soon...
               </CardContent>
             </Card>
           </CardContainer>
@@ -251,11 +234,7 @@ const Home = () => {
               <DesignIcon size="42" />
               <CardHeader>Design</CardHeader>
               <CardContent>
-                While you were working on evolving that new design language for
-                your products. We are hard at work to design a plat form that
-                allows you to identify competent IPR Attorneys who help you
-                secure your IPR over your Designs. No matter the size of your
-                portfolio, iprhub has you covered.
+              Coming Soon...
               </CardContent>
             </Card>
           </CardContainer>

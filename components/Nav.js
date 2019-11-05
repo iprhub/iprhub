@@ -37,7 +37,7 @@ const MenuStyle = styled.div`
 `;
 
 const MenuItemStyle = styled.a`
-text-decoration: none;
+  text-decoration: none;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   color: ${props => (props.MenuItemIsActive ? "#6d48e5" : "#1c1d1e")};
@@ -54,7 +54,7 @@ text-decoration: none;
   &:hover {
     opacity: 1;
     font-weight: 400;
-    color:  #6d48e5;
+    color: #6d48e5;
   }
 
   ${phone(css`
@@ -95,9 +95,8 @@ const Nav = () => {
           <MenuItemStyle>Contact</MenuItemStyle>
         </Link>
         <RightMenuStyle>
-          
-          <MenuItemStyle href="https://app.iprhub.io/auth/login">Log In</MenuItemStyle>
-          <MenuItemStyle href="https://app.iprhub.io/auth/signup">Sign Up</MenuItemStyle>
+          {/* <MenuItemStyle href="https://app.iprhub.io/auth/login">Log In</MenuItemStyle> */}
+          {/* <MenuItemStyle href="https://app.iprhub.io/auth/signup">Sign Up</MenuItemStyle> */}
           {/* <Button href="https://demo.iprhub.io">Demo</Button> */}
         </RightMenuStyle>
       </MenuStyle>

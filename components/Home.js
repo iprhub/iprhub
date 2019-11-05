@@ -1,12 +1,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 //local imports
-import { HomeDesign } from '../static/ProductIllustrations';
-import { phone } from '../lib/utils/mediaQueries';
-import { BulbIcon, TMIcon, DesignIcon } from '../static/CommonIcons';
-import rem from '../lib/utils/rem';
-import { Button } from "semantic-ui-react";
+import { HomeDesign } from "../static/ProductIllustrations";
+import { phone } from "../lib/utils/mediaQueries";
+// import { BulbIcon, TMIcon, DesignIcon } from "../static/CommonIcons";
+import rem from "../lib/utils/rem";
+// import { Button } from "semantic-ui-react";
 
 const HomeWrapper = styled.div`
   min-height: 766px;
@@ -21,12 +22,10 @@ const MainLanding = styled.div`
   padding: 40px 24px;
   text-align: center;
   /* min-height: 766px; */
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 2.5fr 3fr;
-  grid-gap: 3.5vw;
-  /* flex-direction: row; */
-  /* align-items: center; */
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
   ${phone(css`
     padding: 70px 24px;
     /* flex-direction: column; */
@@ -64,7 +63,7 @@ const StrongText2 = styled.div`
 `;
 
 const IllustrationsWrapper = styled.div`
-  width: 40vw;
+  width: 50vw;
   ${phone(css`
     width: 80vw;
     align-self: center;
@@ -147,7 +146,7 @@ const CardContent = styled.p`
 `;
 
 const PrimaryButton = styled.a`
-text-decoration: none;
+  text-decoration: none;
   background-color: #6d48e5;
   border-radius: 3px;
   border: 1px solid transparent;
@@ -174,6 +173,7 @@ const LeftWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 10px 10vw;
 `;
 
 const SmallText = styled.p`
@@ -191,6 +191,9 @@ const Home = () => {
   return (
     <HomeWrapper>
       <MainLanding>
+        <IllustrationsWrapper>
+          <HomeDesign />
+        </IllustrationsWrapper>
         <LeftWrapper>
           <StrongText>Intellectual Property, Simplified.</StrongText>
           <SmallText>
@@ -199,14 +202,12 @@ const Home = () => {
             tracking and management for innovators, creators, right holders and
             IPR Attorneys.
           </SmallText>
-          <PrimaryButton href="https://app.iprhub.io">Get Started</PrimaryButton>
+          <Link href="/contact">
+            <PrimaryButton>Get In Touch</PrimaryButton>
+          </Link>
         </LeftWrapper>
-
-        <IllustrationsWrapper>
-          <HomeDesign />
-        </IllustrationsWrapper>
       </MainLanding>
-      <div>
+      {/* <div>
         <StrongText2>Our Platform</StrongText2>
         <CardsWrapper>
           <CardContainer>
@@ -239,7 +240,7 @@ const Home = () => {
             </Card>
           </CardContainer>
         </CardsWrapper>
-      </div>
+      </div> */}
     </HomeWrapper>
   );
 };

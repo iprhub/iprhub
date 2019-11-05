@@ -1,10 +1,10 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import Link from 'next/link';
+import React from "react";
+import styled, { css } from "styled-components";
+import Link from "next/link";
 
 //local imports
-import { phone } from '../lib/utils/mediaQueries';
-import { FacebookIcon, TwitterIcon, GithubIcon } from '../static/CommonIcons';
+import { phone } from "../lib/utils/mediaQueries";
+import { FacebookIcon, TwitterIcon, GithubIcon } from "../static/CommonIcons";
 
 const FooterWrapper = styled.div`
   background-image: linear-gradient(#fafbfc 0, #fff 36px);
@@ -17,7 +17,7 @@ const FooterStyle = styled.div`
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
-  padding: 144px 0 72px;
+  padding: 50px 0 50px;
   ${phone(css`
     flex-direction: column;
     padding: 40px 0 40px;
@@ -43,8 +43,7 @@ const FooterRightStyle = styled.div`
   display: flex;
   flex: 3;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin-right: 0;
 `;
 
 const FooterRightItemsGroupStyle = styled.div`
@@ -59,8 +58,8 @@ const FooterRightItemsGroupStyle = styled.div`
 `;
 
 const FooterItemsStyle = styled.a`
-text-decoration: none;
-display: block;
+  text-decoration: none;
+  display: block;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   color: #1c1d1e;
@@ -98,15 +97,15 @@ const Footer = () => {
     <FooterWrapper>
       <FooterStyle>
         <FooterLeftStyle>
-          <Link href="/">
+          {/* <Link href="/">
             <LogoStyle>iprhub</LogoStyle>
-          </Link>
+          </Link> */}
           <FooterItemsStyle>
             © Copyright 2019 iprhub. All rights reserved.
           </FooterItemsStyle>
         </FooterLeftStyle>
         <FooterRightStyle>
-          <FooterRightItemsGroupStyle>
+          {/* <FooterRightItemsGroupStyle>
             <FooterItemsStyle>Company</FooterItemsStyle>
             <Link href="/">
               <FooterItemsStyle>Home</FooterItemsStyle>
@@ -117,7 +116,9 @@ const Footer = () => {
             <Link href="/about">
               <FooterItemsStyle>About</FooterItemsStyle>
             </Link>
-            <FooterItemsStyle href="https://app.iprhub.io/auth/login">Sign in</FooterItemsStyle>
+            <FooterItemsStyle href="https://app.iprhub.io/auth/login">
+              Sign in
+            </FooterItemsStyle>
           </FooterRightItemsGroupStyle>
           <FooterRightItemsGroupStyle>
             <FooterItemsStyle>Legal</FooterItemsStyle>
@@ -135,7 +136,7 @@ const Footer = () => {
             <FooterItemsStyle>
               <GithubIcon size="24" />
             </FooterItemsStyle>
-          </FooterRightItemsGroupStyle>
+          </FooterRightItemsGroupStyle> */}
         </FooterRightStyle>
       </FooterStyle>
     </FooterWrapper>

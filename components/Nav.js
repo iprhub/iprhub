@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
+import ReactGA from "react-ga";
 
 //local imports
 import { phone } from "../lib/utils/mediaQueries";
@@ -79,6 +80,10 @@ const LogoStyle = styled.p`
   `)};
 `;
 const Nav = () => {
+  useEffect(() => {
+    ReactGA.initialize("UA-150850440-1");
+    ReactGA.pageview(window.location.pathname);
+  });
   return (
     <NavBarStyle>
       <Link href="/">

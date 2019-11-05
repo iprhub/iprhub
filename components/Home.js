@@ -1,13 +1,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
-// import ReactGA from "react-ga";
+import Link from "next/link";
 
 //local imports
 import { HomeDesign } from "../static/ProductIllustrations";
 import { phone } from "../lib/utils/mediaQueries";
-import { BulbIcon, TMIcon, DesignIcon } from "../static/CommonIcons";
+// import { BulbIcon, TMIcon, DesignIcon } from "../static/CommonIcons";
 import rem from "../lib/utils/rem";
-import { Button } from "semantic-ui-react";
+// import { Button } from "semantic-ui-react";
 
 const HomeWrapper = styled.div`
   min-height: 766px;
@@ -188,9 +188,6 @@ const SmallText = styled.p`
   `)};
 `;
 const Home = () => {
-  // ReactGA.initialize("UA-150850440-1");
-  // ReactGA.pageview("/");
-
   return (
     <HomeWrapper>
       <MainLanding>
@@ -205,9 +202,9 @@ const Home = () => {
             tracking and management for innovators, creators, right holders and
             IPR Attorneys.
           </SmallText>
-          <PrimaryButton href="https://app.iprhub.io">
-            Get In Touch
-          </PrimaryButton>
+          <Link href="/contact">
+            <PrimaryButton>Get In Touch</PrimaryButton>
+          </Link>
         </LeftWrapper>
       </MainLanding>
       {/* <div>

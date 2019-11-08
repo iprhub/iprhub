@@ -8,7 +8,7 @@ const Contact = () => {
     <GenericPageWrapper>
       <Heading1>Contact Us</Heading1>
       <BodyText>
-        email: hello@iprhub.io
+        email: support@iprhub.io
         <br />
         <br />
         phone: +1 (661) 755-3329

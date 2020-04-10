@@ -38,7 +38,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -47,7 +47,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -56,7 +56,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -65,7 +65,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -74,7 +74,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -83,7 +83,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -92,7 +92,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -101,7 +101,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -110,7 +110,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -119,7 +119,7 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect
       x="172.15"
@@ -128,13 +128,13 @@ export const HomeDesign = () => (
       height="12.7"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <path
       d="M172.15 336.15H619.85V346C619.85 347.574 618.574 348.85 617 348.85H175C173.426 348.85 172.15 347.574 172.15 346V336.15Z"
       fill="white"
       stroke="#EFEFEF"
-      stroke-width="0.3"
+      strokeWidth="0.3"
     />
     <rect x="179" y="183" width="50" height="5" rx="1" fill="#EFEFEF" />
     <rect x="558" y="183" width="40" height="5" rx="1" fill="#EFEFEF" />
@@ -265,9 +265,9 @@ export const HomeDesign = () => (
         width="670"
         height="390"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -298,9 +298,9 @@ export const HomeDesign = () => (
         width="142"
         height="82"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -331,9 +331,9 @@ export const HomeDesign = () => (
         width="142"
         height="82"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -364,9 +364,9 @@ export const HomeDesign = () => (
         width="142"
         height="82"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

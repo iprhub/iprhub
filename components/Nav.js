@@ -100,7 +100,7 @@ const Nav = () => {
           <MenuItemStyle>Contact</MenuItemStyle>
         </Link>
         <RightMenuStyle>
-          {/* <MenuItemStyle href="https://app.iprhub.io/auth/login">Log In</MenuItemStyle> */}
+          <MenuItemStyle href="https://app.iprhub.io/auth/login">Log In</MenuItemStyle>
           {/* <MenuItemStyle href="https://app.iprhub.io/auth/signup">Sign Up</MenuItemStyle> */}
           {/* <Button href="https://demo.iprhub.io">Demo</Button> */}
         </RightMenuStyle>
